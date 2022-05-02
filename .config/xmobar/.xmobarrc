@@ -1,0 +1,73 @@
+Config { font = "xft:Hack:weight=bold:pixelsize=10:antialias=true:hinting=true"
+		, additionalFonts = [
+			"xft:Hack Nerd Font Mono:pixelsize=12:antialias=true:hinting=true"
+			,"xft:Hack Nerd Font Mono:pixelsize=14:antialias=true:hinting=true"
+			, "xft:Hack Nerd Font Mono:pixelsize=16:antialias=true:hinting=true"
+			, "xft:Hack Nerd Font Mono:pixelsize=18:antialias=true:hinting=true"
+			, "xft:Hack Nerd Font Mono:pixelsize=20:antialias=true:hinting=true"
+			, "xft:Hack Nerd Font Mono:pixelsize=24:antialias=true:hinting=true"
+		]
+       -- , borderColor = "black"
+       -- , border = BottomB
+       , bgColor = "#161718"
+       , fgColor = "#e6e6e6"
+       , alpha = 255
+	   , position = Top
+       , textOffset = 12
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "~/.xmonad/xpm/" -- default "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands =	[
+			-- Connection
+			Run Com "/home/morgado/.config/xmobar/net_usage.sh" ["#e6e6e6", "#2a2e33", "#58e643", "#d3e342", "#de3535"] "net" 10
+
+			-- Cpu Usage percentage
+			, Run Com "/home/morgado/.config/xmobar/cpu_usage.sh" ["#e6e6e6", "#161718", "#58e643", "#d3e342", "#de3535"] "cpu_usage" 10
+
+			-- Memory (RAM) usage in percentage
+			, Run Com "/home/morgado/.config/xmobar/mem_usage.sh" ["#e6e6e6", "#2a2e33", "#58e643", "#d3e342", "#de3535"] "mem_usage" 10
+
+			-- Disks Status
+			, Run DiskU [("/", "<fc=#e6e6e6,#161718> <fn=2></fn> <used> / <size> </fc>")] [] 60
+
+			-- Volumen
+			, Run Com "/home/morgado/.config/xmobar/volumen.sh" ["#e6e6e6", "#2a2e33"] "vol" 10
+
+			-- Date and Time
+			, Run Com "/home/morgado/.config/xmobar/current_date.sh" ["#e6e6e6", "#161718"] "date" 30
+
+			, Run StdinReader
+
+			-- Battery status
+			, Run Battery [
+				"-t", "<fc=#e6e6e6,#161718> \xf583 <acstatus>: <left>  </fc>",
+				"--",
+				--"-c", "charge_full",
+				"-O", "AC",
+				"-o", "Bat",
+				"-h", "green",
+				"-l", "red"
+			] 10
+		]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %StdinReader% }{ \
+			\<fc=#2a2e33,#161718><fn=6></fn></fc>\
+			\%net%\
+			\<fc=#161718,#2a2e33><fn=6></fn></fc>\
+			\%cpu_usage%\
+			\<fc=#2a2e33,#161718><fn=6></fn></fc>\
+			\%mem_usage%\
+			\<fc=#161718,#2a2e33><fn=6></fn></fc>\
+			\%disku%\
+			\<fc=#2a2e33,#161718><fn=6></fn></fc>\
+			\%vol%\
+			\<fc=#161718,#2a2e33><fn=6></fn></fc>\
+			\%date%\
+			\%battery%"
+       }
