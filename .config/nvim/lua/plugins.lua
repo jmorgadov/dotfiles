@@ -8,7 +8,6 @@ Plug 'godlygeek/tabular'
 -- Navegation
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/fzf'
--- Plug 'preservim/nerdtree'
 
 -- Themes
 Plug 'arcticicestudio/nord-vim'
@@ -29,7 +28,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
+Plug 'akinsho/flutter-tools.nvim'
 Plug 'integralist/vim-mypy'
 
 -- Languages general
@@ -40,6 +39,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'dense-analysis/ale'		-- Linter
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-path'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 
@@ -52,11 +52,11 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'     -- Toggle comentaries on code
 Plug 'vim-airline/vim-airline'  -- Powerline
 Plug 'SirVer/ultisnips'			-- Some snippets
-Plug 'puremourning/vimspector'	-- Debugging
 Plug 'tpope/vim-fugitive'		-- Git
-Plug 'junegunn/gv.vim'
+Plug 'rbong/vim-flog'
 Plug 'szw/vim-maximizer'		-- Maximize a buffer temporarly (util for vimspector)
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'nvim-orgmode/orgmode'
 
 -- Initialize plugin system
 vim.call('plug#end')

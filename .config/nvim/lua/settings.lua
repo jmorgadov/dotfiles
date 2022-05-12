@@ -5,7 +5,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.autoindent = true
+vim.opt.copyindent = true
 vim.opt.incsearch = true
+vim.opt.inccommand = "split"
 vim.opt.number = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
@@ -20,6 +23,7 @@ vim.opt.syntax = "on"
 vim.opt.background = "dark"
 vim.opt.termguicolors = true
 vim.g.mapleader = " "
+vim.g.html_indent_script1 = "zero"
 
 -- Set tab spacing to 2 spaces if filetype is dart
 vim.cmd [[augroup filetype_dart]]
@@ -33,3 +37,4 @@ vim.cmd [[
   set laststatus=3
 ]]
 
+vim.cmd [[ autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2 ]]
