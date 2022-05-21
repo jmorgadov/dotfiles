@@ -93,4 +93,20 @@ require('orgmode').setup({
 })
 require('orgmode').setup_ts_grammar()
 
-
+-- Color scheme
+local leaf_colors = require("leaf.colors").setup()
+require("leaf").setup({
+    undercurl = true,
+    commentStyle = "italic",
+    functionStyle = "NONE",
+    keywordStyle = "italic",
+    statementStyle = "bold",
+    typeStyle = "NONE",
+    variablebuiltinStyle = "italic",
+    transparent = false,
+    colors = {},
+	overrides = {
+		ColorColumn = { fg = leaf_colors.lighter, bg = leaf_colors.dark_dim },
+	},
+    theme = "darker", -- default, alternatives: "dark", "lighter", "darker", "lightest", "darkest"
+})

@@ -23,6 +23,7 @@ Plug 'lifepillar/vim-gruvbox8'
 Plug 'sainnhe/everforest'
 Plug 'RRethy/nvim-base16'
 Plug 'joshdick/onedark.vim'
+Plug 'daschw/leaf.nvim'
 
 -- Languages
 Plug 'lervag/vimtex'
@@ -33,6 +34,7 @@ Plug 'integralist/vim-mypy'
 
 -- Languages general
 vim.cmd [[ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} ]]
+Plug 'github/copilot.vim'
 Plug 'neovim/nvim-lsp'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
@@ -44,6 +46,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 
 -- Utilf
+vim.cmd [[ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} ]]
 Plug 'onsails/lspkind-nvim'
 Plug 'sunjon/shade.nvim'
 Plug 'oberblastmeister/termwrapper.nvim'

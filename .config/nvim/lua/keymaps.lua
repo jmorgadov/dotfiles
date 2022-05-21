@@ -69,6 +69,7 @@ nmap("<leader>tt", "cit")
 -- Flutter
 nmap("<leader>fc", ":Telescope flutter commands<CR>")
 nmap("<leader>fw", ":FlutterRun -d chrome --web-port 40200<CR>")
+nmap("<leader>fd", ":FlutterRun -d linux<CR>")
 
 -- LSP
 nmap('gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')

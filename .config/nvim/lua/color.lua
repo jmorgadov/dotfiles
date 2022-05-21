@@ -1,5 +1,5 @@
 vim.cmd [[
-  colorscheme onedark
+  colorscheme leaf
   hi SignColumn guibg=none
   hi LineNr guibg=none
   hi DiagnosticError guifg=#CC6666

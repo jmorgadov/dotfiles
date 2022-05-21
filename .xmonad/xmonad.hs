@@ -86,7 +86,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm			  , xK_p     ), spawn "maim -s -m 10 \"$HOME/Pictures/screenshot.jpg\" && xclip -selection clipboard -t image/jpg \"$HOME/Pictures/screenshot.jpg\"")
 
 	-- open todo list
-	, ((modm			  , xK_t     ), spawn "kitty -e nvim $HOME/projects/todo.md")
+	, ((modm			  , xK_t     ), spawn "kitty -e nvim $HOME/personal/org/todo.org -c cd\\ $HOME/personal/org")
 
     -- open alsamixer
     , ((modm,               xK_a     ), spawn "kitty -e alsamixer")
