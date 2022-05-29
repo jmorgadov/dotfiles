@@ -82,4 +82,4 @@ if [ ! -z "$IP_ADDR" ]; then
 fi
 
 echo "$CURRENT_RX $CURRENT_TX" > "$LOG_FILE"
-echo "<fc=$FG$BG><fn=5>  </fn></fc>$RX_TEXT<fc=$FG$BG> $TX_TEXT$IP_ADDR </fc>"
+echo "<fc=$FG$BG>   </fc>$RX_TEXT<fc=$FG$BG> $TX_TEXT$IP_ADDR </fc>"

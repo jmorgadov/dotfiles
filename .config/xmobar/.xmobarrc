@@ -1,11 +1,11 @@
-Config { font = "xft:Hack:weight=bold:pixelsize=10:antialias=true:hinting=true"
+Config { font = "xft:Iosevka Nerd Font:weight=bold:pixelsize=10:antialias=true:hinting=true"
 		, additionalFonts = [
-			"xft:Hack Nerd Font Mono:pixelsize=12:antialias=true:hinting=true"
-			,"xft:Hack Nerd Font Mono:pixelsize=14:antialias=true:hinting=true"
-			, "xft:Hack Nerd Font Mono:pixelsize=16:antialias=true:hinting=true"
-			, "xft:Hack Nerd Font Mono:pixelsize=18:antialias=true:hinting=true"
-			, "xft:Hack Nerd Font Mono:pixelsize=20:antialias=true:hinting=true"
-			, "xft:Hack Nerd Font Mono:pixelsize=24:antialias=true:hinting=true"
+			"xft:Iosevka Nerd Font:pixelsize=12:antialias=true:hinting=true"
+			,"xft:Iosevka Nerd Font:pixelsize=14:antialias=true:hinting=true"
+			, "xft:Iosevka Nerd Font:pixelsize=16:antialias=true:hinting=true"
+			, "xft:Iosevka Nerd Font:pixelsize=18:antialias=true:hinting=true"
+			, "xft:Iosevka Nerd Font:pixelsize=20:antialias=true:hinting=true"
+			, "xft:Iosevka Nerd Font:pixelsize=24:antialias=true:hinting=true"
 		]
        -- , borderColor = "black"
        -- , border = BottomB
@@ -33,7 +33,7 @@ Config { font = "xft:Hack:weight=bold:pixelsize=10:antialias=true:hinting=true"
 			, Run Com "/home/morgado/.config/xmobar/mem_usage.sh" ["#e6e6e6", "#2a2e33", "#58e643", "#d3e342", "#de3535"] "mem_usage" 10
 
 			-- Disks Status
-			, Run DiskU [("/", "<fc=#e6e6e6,#161718> <fn=2></fn> <used> / <size> </fc>")] [] 60
+			, Run DiskU [("/", "<fc=#e6e6e6,#161718>  <used> - <size> </fc>")] [] 60
 
 			-- Volumen
 			, Run Com "/home/morgado/.config/xmobar/volumen.sh" ["#e6e6e6", "#2a2e33"] "vol" 10
@@ -57,17 +57,17 @@ Config { font = "xft:Hack:weight=bold:pixelsize=10:antialias=true:hinting=true"
        , sepChar = "%"
        , alignSep = "}{"
        , template = " %StdinReader% }{ \
-			\<fc=#2a2e33,#161718><fn=6></fn></fc>\
+			\<fc=#2a2e33,#161718><fn=3></fn></fc>\
 			\%net%\
-			\<fc=#161718,#2a2e33><fn=6></fn></fc>\
+			\<fc=#161718,#2a2e33><fn=3></fn></fc>\
 			\%cpu_usage%\
-			\<fc=#2a2e33,#161718><fn=6></fn></fc>\
+			\<fc=#2a2e33,#161718><fn=3></fn></fc>\
 			\%mem_usage%\
-			\<fc=#161718,#2a2e33><fn=6></fn></fc>\
+			\<fc=#161718,#2a2e33><fn=3></fn></fc>\
 			\%disku%\
-			\<fc=#2a2e33,#161718><fn=6></fn></fc>\
+			\<fc=#2a2e33,#161718><fn=3></fn></fc>\
 			\%vol%\
-			\<fc=#161718,#2a2e33><fn=6></fn></fc>\
+			\<fc=#161718,#2a2e33><fn=3></fn></fc>\
 			\%date%\
 			\%battery%"
        }

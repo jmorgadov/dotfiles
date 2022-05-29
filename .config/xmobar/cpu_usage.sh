@@ -34,4 +34,4 @@ else
 	COLOR=$GREEN
 fi
 
-echo "<fc=$FG$BG><fn=4> 龍</fn></fc><fc=$COLOR$BG> $CPU_USAGE % </fc>"
+echo "<fc=$FG$BG><fn=0> 龍 </fn></fc><fc=$COLOR$BG> $CPU_USAGE % </fc>"

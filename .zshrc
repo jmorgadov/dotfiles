@@ -8,6 +8,9 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 
+source /etc/profile
+source /usr/share/nvm/init-nvm.sh
+
 # Add flutter to path
 export PATH="$PATH:$HOME/softs/flutter/bin"
 

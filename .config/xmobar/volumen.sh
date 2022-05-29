@@ -12,4 +12,4 @@ fi
 
 VOL=$(amixer get Master | tail -n 1 | awk '{print $5}' | grep -oP "\d*")
 
-echo "<fc=$FG$BG><fn=3> 墳</fn></fc><fc=$FG$BG> $VOL % </fc>"
+echo "<fc=$FG$BG> 墳 </fc><fc=$FG$BG> $VOL % </fc>"
