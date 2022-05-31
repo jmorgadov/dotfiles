@@ -24,13 +24,15 @@ Plug 'sainnhe/everforest'
 Plug 'RRethy/nvim-base16'
 Plug 'joshdick/onedark.vim'
 Plug 'daschw/leaf.nvim'
+Plug 'kvrohit/substrata.nvim'
+Plug 'mangeshrex/everblush.vim'
+Plug 'rebelot/kanagawa.nvim'
 
 -- Languages
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'akinsho/flutter-tools.nvim'
-Plug 'integralist/vim-mypy'
 
 -- Languages general
 vim.cmd [[ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} ]]
