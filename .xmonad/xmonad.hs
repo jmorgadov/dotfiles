@@ -26,7 +26,7 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "kitty"
+myTerminal      = "alacritty"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -38,7 +38,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 2
+myBorderWidth   = 0
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -61,7 +61,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#616161"
-myFocusedBorderColor = "#61AFEF"
+myFocusedBorderColor = "#648fb3"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -77,19 +77,20 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0                 , 0x1008FF12), spawn "amixer set Master toggle")
 
 	-- network
-	, ((modm 			  , xK_n	 ), spawn "kitty -e nmtui")
+	, ((modm 			  , xK_n	 ), spawn "alacritty -e nmtui")
 
     -- launch dmenu
     , ((modm,               xK_d     ), spawn "dmenu_run")
 
     -- take screenshot
-    , ((modm			  , xK_p     ), spawn "maim -s -m 10 \"$HOME/Pictures/screenshot.jpg\" && xclip -selection clipboard -t image/jpg \"$HOME/Pictures/screenshot.jpg\"")
+    , ((0				, xK_Print), spawn "maim -s -m 10 \"$HOME/Pictures/screenshot.jpg\" && xclip -selection clipboard -t image/jpg \"$HOME/Pictures/screenshot.jpg\"")
+    , ((modm				, xK_p), spawn "maim -s -m 10 \"$HOME/Pictures/screenshot.jpg\" && xclip -selection clipboard -t image/jpg \"$HOME/Pictures/screenshot.jpg\"")
 
 	-- open todo list
-	, ((modm			  , xK_t     ), spawn "kitty -e nvim $HOME/personal/org/todo.org -c cd\\ $HOME/personal/org")
+	, ((modm			  , xK_t     ), spawn "alacritty -e nvim $HOME/personal/org/todo.org -c cd\\ $HOME/personal/org")
 
     -- open alsamixer
-    , ((modm,               xK_a     ), spawn "kitty -e alsamixer")
+    , ((modm,               xK_a     ), spawn "alacritty -e alsamixer")
 
     -- close focused window
     , ((modm,               xK_c     ), kill)
@@ -208,11 +209,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-mySpacing = spacingRaw False
-		(Border 3 3 3 3)
-		True
-		(Border 3 3 3 3)
-		True
+mySpacing = spacingRaw False (Border 5 5 5 5) True (Border 5 5 5 5) True
 
 myLayout = toggleLayouts (noBorders Full) (avoidStruts(mySpacing $ tiled ||| Mirror tiled ||| Full))
   where
