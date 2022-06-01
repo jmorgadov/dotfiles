@@ -3,13 +3,9 @@
 OPT=$(echo -e "Cancel\nLogout\nReboot\nPower off" | dmenu -i -p "Power")
 
 if [ "$OPT" = "Logout" ]; then
-	logout
+	pkill -u $USER
 elif [ "$OPT" = "Reboot" ]; then
 	reboot
 elif [ "$OPT" = "Power off" ]; then
 	poweroff
 fi
-
-
-
-
