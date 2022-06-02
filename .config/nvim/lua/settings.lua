@@ -15,7 +15,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.ignorecase = true
 vim.opt.updatetime = 500
 vim.opt.backspace = "indent,eol,start"
-vim.opt.guifont = "hack_nerd_font:h21"
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.foldenable = false
 vim.opt.mouse = "a"
@@ -24,6 +23,9 @@ vim.opt.background = "dark"
 vim.opt.termguicolors = true
 vim.g.mapleader = " "
 vim.g.html_indent_script1 = "zero"
+vim.opt.spelllang="en"
+vim.opt.cursorline = true
+
 
 -- Set tab spacing to 2 spaces if filetype is dart
 vim.cmd [[augroup filetype_dart]]

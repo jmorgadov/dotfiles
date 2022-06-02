@@ -34,7 +34,6 @@ nmap("<C-S>", ":update<CR>")
 nmap("<leader>wq", ":wq<CR>")
 nmap("<leader>q", ":q<CR>")
 
-nmap("<leader>at", ":ALEToggle<CR>")
 nmap("<leader>gg", ":G<CR>")
 nmap("<leader>hh", ":set hlsearch!<CR>")
 nmap("<leader>ss", ":mks! .session.vim<CR>")
@@ -60,13 +59,10 @@ tmap("<C-W>j", "<C-\\><C-N><C-W>j")
 tmap("<C-W>k", "<C-\\><C-N><C-W>k")
 tmap("<C-W>l", "<C-\\><C-N><C-W>l")
 
-nmap("<leader>fi", ":ALEFix<CR>")
-nmap("<leader>mp", ":Mypy<CR>")
-
--- Org mode
-nmap("<leader>tt", "cit")
-
 -- Flutter
 nmap("<leader>fc", ":Telescope flutter commands<CR>")
 nmap("<leader>fw", ":FlutterRun -d chrome --web-port 40200<CR>")
 nmap("<leader>fd", ":FlutterRun -d linux<CR>")
+
+nmap("<F11>", ":set spell!<cr>")
+imap("<F11>", "<C-O>:set spell!<cr>")

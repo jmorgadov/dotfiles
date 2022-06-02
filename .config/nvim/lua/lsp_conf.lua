@@ -39,12 +39,6 @@ local lsp_installer = require("nvim-lsp-installer")
 -- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
 -- or if the server is already installed).
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  opts.border = "rounded"
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
 
 lsp_installer.on_server_ready(function(server)
     local opts = { on_attach = on_attach }
@@ -79,11 +73,18 @@ end)
 vim.o.updatetime = 250
 vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]]
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = {
+    severity = {
+      min = vim.diagnostic.severity.WARN,
+    },
+  },
+  float = {
+    border = "rounded",
+  },
   signs = true,
-  underline = true,
+  underline = false,
   update_in_insert = true,
-  severity_sort = false,
+  severity_sort = true,
 })
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
