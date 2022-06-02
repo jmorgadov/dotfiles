@@ -1,32 +1,14 @@
 local cmd = vim.cmd
 
--- Airline
-vim.g.airline_powerline_fonts = 1
-vim.g.airline_theme = "onedark"
-cmd [[ let g:airline#extensions#tabline#enabled = 0 ]]
-
 -- FZF
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
 
 -- Telescope
 require('telescope').setup{ defaults = { file_ignore_patterns = {".git"} } }
--- require("telescope").load_extension("flutter")
+require("telescope").load_extension("flutter")
 
 -- Trouble
 require("trouble").setup {}
-
--- ALE
-cmd [[ autocmd FileType python :normal zR ]]
-vim.g.ale_python_executable = "python"
-vim.g.ale_python_pylint_use_global = 1
-cmd [[ let g:ale_python_isort_use_global = 1 ]]
-cmd [[ let g:ale_linters={ 'python': ['pylint'] } ]]
-cmd [[ let g:ale_fixers = { 'python': ['black', 'isort'] } ]]
-cmd [[ let g:ale_python_isort_options = '--profile black' ]]
-cmd [[ highlight ALEWarning ctermfg=none cterm=underline ]]
-cmd [[ highlight ALEErrorSign ctermbg=none ]]
-cmd [[ highlight ALEWarningSign ctermbg=none ]]
--- cmd [[ let g:ale_pattern_options = { '.*tests/.*' : { 'ale_enabled' : 0 } } ]]
 
 -- Vimtex
 cmd [[ autocmd FileType tex map <F5> :call vimtex#compiler#start()<CR> ]]
@@ -66,18 +48,6 @@ require"termwrapper".setup {
 	log = 1, -- 1 = warning, 2 = info, 3 = debug
 }
 
-
--- Shade
-require'shade'.setup({
-	overlay_opacity = 100,
-	opacity_step = 1,
-	keys = {
-		brightness_up    = '<C-Up>',
-		brightness_down  = '<C-Down>',
-		toggle           = '<Leader>s',
-	}
-})
-
 -- Orgmode
 require('orgmode').setup({
 	org_todo_keywords = {'TODO', 'WAITING', '|', 'DONE', 'DELEGATED'},
@@ -110,3 +80,52 @@ require("leaf").setup({
 	},
     theme = "darker", -- default, alternatives: "dark", "lighter", "darker", "lightest", "darkest"
 })
+
+-- Lualine
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+    globalstatus = false,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = { 'fzf', 'fugitive' }
+}
+
+-- Null-ls
+local null_ls = require("null-ls")
+null_ls.setup({
+    default_timeout = 20000,
+    fallback_severity = vim.diagnostic.severity.INFO,
+    sources = {
+        null_ls.builtins.diagnostics.pylint,
+        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.formatting.black,
+		null_ls.builtins.formatting.isort.with({
+			args = { "--stdout", "--filename", "$FILENAME", "-" , "--profile", "black"}
+		}),
+	},
+})
+
+-- Autopairs
+require('nvim-autopairs').setup{}

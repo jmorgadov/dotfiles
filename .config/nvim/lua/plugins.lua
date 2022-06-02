@@ -11,27 +11,18 @@ Plug 'junegunn/fzf'
 
 -- Themes
 Plug 'arcticicestudio/nord-vim'
-Plug 'EdenEast/nightfox.nvim'
 Plug 'ray-x/material_plus.nvim'
-Plug 'jnurmine/Zenburn'
-Plug 'mhartington/oceanic-next'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'w0ng/vim-hybrid'
-Plug 'cocopon/iceberg.vim'
 Plug 'doums/darcula'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'sainnhe/everforest'
 Plug 'RRethy/nvim-base16'
 Plug 'joshdick/onedark.vim'
 Plug 'daschw/leaf.nvim'
-Plug 'kvrohit/substrata.nvim'
-Plug 'mangeshrex/everblush.vim'
-Plug 'rebelot/kanagawa.nvim'
 
 -- Languages
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
-Plug 'dart-lang/dart-vim-plugin'
 Plug 'akinsho/flutter-tools.nvim'
 
 -- Languages general
@@ -40,28 +31,25 @@ Plug 'github/copilot.vim'
 Plug 'neovim/nvim-lsp'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
-Plug 'dense-analysis/ale'		-- Linter
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-path'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 -- Utilf
 vim.cmd [[ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} ]]
-Plug 'onsails/lspkind-nvim'
-Plug 'sunjon/shade.nvim'
-Plug 'oberblastmeister/termwrapper.nvim'
-Plug 'akinsho/toggleterm.nvim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-commentary'     -- Toggle comentaries on code
-Plug 'vim-airline/vim-airline'  -- Powerline
-Plug 'SirVer/ultisnips'			-- Some snippets
-Plug 'tpope/vim-fugitive'		-- Git
-Plug 'rbong/vim-flog'
-Plug 'szw/vim-maximizer'		-- Maximize a buffer temporarly (util for vimspector)
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'nvim-orgmode/orgmode'
+Plug 'onsails/lspkind-nvim'					-- Add icons to LSP completion
+Plug 'oberblastmeister/termwrapper.nvim'    -- Terminal wrapper
+Plug 'windwp/nvim-autopairs'				-- Auto pairs
+Plug 'tpope/vim-commentary'					-- Toggle comentaries on code
+Plug 'SirVer/ultisnips'						-- Snippet engine
+Plug 'tpope/vim-fugitive'					-- Git
+Plug 'rbong/vim-flog'						-- Git log
+Plug 'szw/vim-maximizer'					-- Maximize a buffer temporarly (util for vimspector)
+Plug 'nvim-orgmode/orgmode'					-- Org mode
+Plug 'nvim-lualine/lualine.nvim'			-- Global bar
 
 -- Initialize plugin system
 vim.call('plug#end')
