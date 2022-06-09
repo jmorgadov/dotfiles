@@ -9,7 +9,13 @@ fi
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 
 source /etc/profile
-source /usr/share/nvm/init-nvm.sh
+
+# Add node version created by nvm (not loading nvm bc it is too slow)
+# source /usr/share/nvm/init-nvm.sh
+export PATH=$HOME/.nvm/versions/node/v17.9.0/bin:$PATH
+
+export C_INCLUDE_PATH=/usr/include/python3.10/
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:/usr/include/
 
 # Add flutter to path
 export PATH="$PATH:$HOME/softs/flutter/bin"
@@ -17,9 +23,6 @@ export PATH="$PATH:$HOME/softs/flutter/bin"
 # Change default editor
 export EDITOR=/usr/bin/nvim
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
-
-# nnn config
-source $HOME/.config/nnn/config.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -132,8 +135,8 @@ alias todo="nvim $HOME/personal/org/todo.org -c cd\\ $HOME/personal/org"
 alias tt="todo.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

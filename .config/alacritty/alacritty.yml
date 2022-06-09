@@ -1,14 +1,30 @@
+window:
+  padding:
+    x: 0
+    y: 0
+
 font:
   normal:
     family: Iosevka Nerd Font
 
-  size: 11.0
+  size: 11
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
     y: -2
+
+  glyph_offset:
+    x: 0
+    y: -1
+
+cursor:
+  style:
+    shape: Block
+    blinking: Always
+  blink_interval: 400
+
 
 # Colors
 colors:
@@ -20,8 +36,8 @@ colors:
     foreground: '#c4c8c5'
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0xffffff'
-    cursor: '#c4c8c5'
+    text: '0x222222'
+    cursor: '#CCCCCC'
   # Normal colors
   normal:
     black:   '#000000'
