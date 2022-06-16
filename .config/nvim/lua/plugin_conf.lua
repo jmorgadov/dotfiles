@@ -1,20 +1,24 @@
 local cmd = vim.cmd
 
--- FZF
+--[ FZF ]-----------------------------------------------------------------------
 vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
 
--- Telescope
+
+--[ Telescope ]-----------------------------------------------------------------
 require('telescope').setup{ defaults = { file_ignore_patterns = {".git"} } }
 require("telescope").load_extension("flutter")
 
--- Trouble
+
+--[ Trouble ]-------------------------------------------------------------------
 require("trouble").setup {}
 
--- Vimtex
+
+--[ Vimtex ]--------------------------------------------------------------------
 cmd [[ autocmd FileType tex map <F5> :call vimtex#compiler#start()<CR> ]]
 cmd [[ autocmd FileType tex map <F6> :call vimtex#compiler#stop()<CR> ]]
 
--- Markdown
+
+--[ Markdown ]------------------------------------------------------------------
 vim.g.vim_markdown_conceal = 2
 vim.g.vim_markdown_conceal_code_blocks = 0
 vim.g.vim_markdown_math = 1
@@ -27,15 +31,12 @@ cmd [[ autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown ]]
 cmd [[ autocmd FileType markdown set conceallevel=0 ]]
 cmd [[ autocmd FileType markdown :normal zR ]]
 
--- Tree sitter
-require('nvim-treesitter.configs').setup {
-	highlight = {
-		-- `false` will disable the whole extension
-		enable = true,
-	}
-}
 
--- Term Wrapper
+--[ Tree sitter ]---------------------------------------------------------------
+require('nvim-treesitter.configs').setup { highlight = { enable = true } }
+
+
+--[ Term Wrapper ]--------------------------------------------------------------
 require"termwrapper".setup {
 	-- these are all of the defaults
 	open_autoinsert = true, -- autoinsert when opening
@@ -48,7 +49,8 @@ require"termwrapper".setup {
 	log = 1, -- 1 = warning, 2 = info, 3 = debug
 }
 
--- Orgmode
+
+--[ Orgmode ]-------------------------------------------------------------------
 require('orgmode').setup({
 	org_todo_keywords = {'TODO', 'WAITING', '|', 'DONE', 'DELEGATED'},
 	org_agenda_files = {'~/personal/org/*'},
@@ -63,7 +65,8 @@ require('orgmode').setup({
 })
 require('orgmode').setup_ts_grammar()
 
--- Color scheme
+
+--[ Color scheme ]--------------------------------------------------------------
 local leaf_colors = require("leaf.colors").setup()
 require("leaf").setup({
     undercurl = true,
@@ -81,7 +84,8 @@ require("leaf").setup({
     theme = "darker", -- default, alternatives: "dark", "lighter", "darker", "lightest", "darkest"
 })
 
--- Lualine
+
+--[ Lualine ]-------------------------------------------------------------------
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -91,6 +95,7 @@ require('lualine').setup {
     disabled_filetypes = {},
     always_divide_middle = true,
     globalstatus = false,
+    path = 1,
   },
   sections = {
     lualine_a = {'mode'},
@@ -112,20 +117,66 @@ require('lualine').setup {
   extensions = { 'fzf', 'fugitive' }
 }
 
--- Null-ls
+
+--[ Null-ls ]-------------------------------------------------------------------
 local null_ls = require("null-ls")
 null_ls.setup({
     default_timeout = 20000,
     fallback_severity = vim.diagnostic.severity.INFO,
     sources = {
+        -- Python
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.isort.with({
 			args = { "--stdout", "--filename", "$FILENAME", "-" , "--profile", "black"}
 		}),
+
+		-- Bash
+		null_ls.builtins.formatting.shfmt,
+
+		-- Gitsigns
+		null_ls.builtins.code_actions.gitsigns
 	},
 })
 
--- Autopairs
+
+--[ Autopairs ]-----------------------------------------------------------------
 require('nvim-autopairs').setup{}
+
+
+--[ Gitsigns ]------------------------------------------------------------------
+require('gitsigns').setup {
+  signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
+  numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
+  linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
+  word_diff  = false, -- Toggle with `:Gitsigns toggle_word_diff`
+  watch_gitdir = {
+    interval = 1000,
+    follow_files = true
+  },
+  attach_to_untracked = true,
+  current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+    delay = 200,
+    ignore_whitespace = false,
+  },
+  current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+  sign_priority = 6,
+  update_debounce = 100,
+  status_formatter = nil, -- Use default
+  max_file_length = 40000,
+  preview_config = {
+    -- Options passed to nvim_open_win
+    border = 'single',
+    style = 'minimal',
+    relative = 'cursor',
+    row = 0,
+    col = 1
+  },
+  yadm = {
+    enable = false
+  },
+}

@@ -11,6 +11,7 @@ Plug 'junegunn/fzf'
 
 -- Themes
 Plug 'arcticicestudio/nord-vim'
+Plug 'EdenEast/nightfox.nvim'
 Plug 'ray-x/material_plus.nvim'
 Plug 'w0ng/vim-hybrid'
 Plug 'doums/darcula'
@@ -50,6 +51,7 @@ Plug 'rbong/vim-flog'						-- Git log
 Plug 'szw/vim-maximizer'					-- Maximize a buffer temporarly (util for vimspector)
 Plug 'nvim-orgmode/orgmode'					-- Org mode
 Plug 'nvim-lualine/lualine.nvim'			-- Global bar
+Plug 'lewis6991/gitsigns.nvim'
 
 -- Initialize plugin system
 vim.call('plug#end')

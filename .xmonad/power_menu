@@ -1,11 +1,15 @@
 #!/usr/bin/bash
 
-OPT=$(echo -e "Cancel\nLogout\nReboot\nPower off" | dmenu -i -p "Power")
+CANCEL="ﰸ  Cancel"
+LOGOUT="  Logout"
+REBOOT="累  Reboot"
+POWER_OFF="襤  Power off"
+OPT=$(echo -e "$CANCEL\n$LOGOUT\n$REBOOT\n$POWER_OFF" | dmenu -i -p "Power")
 
-if [ "$OPT" = "Logout" ]; then
+if [ "$OPT" = "$LOGOUT" ]; then
 	pkill -u $USER
-elif [ "$OPT" = "Reboot" ]; then
+elif [ "$OPT" = "$REBOOT" ]; then
 	reboot
-elif [ "$OPT" = "Power off" ]; then
+elif [ "$OPT" = "$POWER_OFF" ]; then
 	poweroff
 fi
