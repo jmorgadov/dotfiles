@@ -1,7 +1,0 @@
-require("settings")
-require("plugins")
-require("plugin_conf")
-require("color")
-require("keymaps")
-require("lsp_conf")
-require("cmp_conf")
