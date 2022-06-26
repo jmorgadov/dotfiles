@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+# Set wallpaper
+BG_IMAGE_PATH=~/pictures/wallpaper.jpg
+if [ -f $BG_IMAGE_PATH ]; then
+	feh --bg-center --bg-fill $BG_IMAGE_PATH
+fi
+
+# Set keyboard layout
+setxkbmap us -variant intl
