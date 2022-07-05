@@ -10,6 +10,7 @@ export RANGER_DEVICONS_SEPARATOR="  "
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 export NODE_PATH=$NODE_PATH:$HOME/.nvm/versions/node/v17.9.1/lib/node_modules
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # For using autojump
 source /etc/profile
