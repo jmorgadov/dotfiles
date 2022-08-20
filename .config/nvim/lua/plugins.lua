@@ -24,7 +24,7 @@ Plug 'daschw/leaf.nvim'
 -- Languages
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
-Plug 'akinsho/flutter-tools.nvim'
+-- Plug 'akinsho/flutter-tools.nvim'
 
 -- Languages general
 vim.cmd [[ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} ]]
@@ -39,7 +39,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
--- Utilf
+-- Util
 vim.cmd [[ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} ]]
 Plug 'onsails/lspkind-nvim'					-- Add icons to LSP completion
 Plug 'oberblastmeister/termwrapper.nvim'    -- Terminal wrapper
@@ -54,6 +54,7 @@ Plug 'nvim-lualine/lualine.nvim'			-- Global bar
 Plug 'lewis6991/gitsigns.nvim'				-- Git signs
 Plug 'tpope/vim-surround'					-- Surround
 Plug 'lilydjwg/colorizer'
+Plug 'chaoren/vim-wordmotion'
 
 -- Initialize plugin system
 vim.call('plug#end')

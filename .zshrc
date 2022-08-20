@@ -135,6 +135,10 @@ alias gdf="git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias vdf="GIT_DIR=$HOME/dotfiles GIT_WORK_TREE=$HOME nvim"
 alias ranger=". ranger"
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

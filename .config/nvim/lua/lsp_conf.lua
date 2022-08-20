@@ -52,7 +52,7 @@ end
 
 
 --Flutter
-require("flutter-tools").setup { on_attach = on_attach }
+-- require("flutter-tools").setup { on_attach = on_attach }
 
 local lsp_installer = require("nvim-lsp-installer")
 
@@ -79,9 +79,9 @@ lsp_installer.on_server_ready(function(server)
 			capabilities = capabilities
 		}
 	end
-	if server.name == "dartls" then
-		return
-	end
+	-- if server.name == "dartls" then
+	-- 	return
+	-- end
 	server:setup(opts)
 end)
 

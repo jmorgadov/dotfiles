@@ -19,6 +19,8 @@ import XMonad.Util.Run
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ToggleLayouts (ToggleLayout(..), toggleLayouts)
 import XMonad.Hooks.ServerMode
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.Focus
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -214,7 +216,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-mySpacing = spacingRaw False (Border 5 5 5 5) True (Border 5 5 5 5) True
+mySpacing = spacingRaw False (Border 0 4 4 4) True (Border 0 4 4 4) True
 
 myLayout = toggleLayouts (noBorders Full) (avoidStruts(mySpacing $ tiled ||| Mirror tiled ||| Full))
   where
@@ -265,7 +267,7 @@ myManageHook = composeAll
 myEventHook = serverModeEventHook
 	<+> serverModeEventHookCmd
 	<+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
-	<+> docksEventHook
+	-- <+> docksEventHook
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -317,6 +319,11 @@ myStartupHook = do
 	spawn "sh $HOME/.config/polybar/launch.sh"
 
 ------------------------------------------------------------------------
+
+myActivateHook :: ManageHook
+myActivateHook = activateSwitchWs
+
+------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
 -- Run xmonad with the settings you specify. No need to modify this.
@@ -324,7 +331,7 @@ myStartupHook = do
 main = do
 	forM_ [".xmonad-workspace-log", ".xmonad-title-log"] $ \file -> do
 		safeSpawn "mkfifo" ["/tmp/" ++ file]
-	xmonad $ docks $ defaults
+	xmonad $ docks $ setEwmhActivateHook myActivateHook . ewmh $ defaults
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
