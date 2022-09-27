@@ -20,11 +20,13 @@ Plug 'sainnhe/everforest'
 Plug 'RRethy/nvim-base16'
 Plug 'joshdick/onedark.vim'
 Plug 'daschw/leaf.nvim'
+vim.cmd [[ Plug 'folke/tokyonight.nvim', { 'branch': 'main' } ]]
 
 -- Languages
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
--- Plug 'akinsho/flutter-tools.nvim'
+Plug 'akinsho/flutter-tools.nvim'
+-- Plug 'thosakwe/vim-flutter'
 
 -- Languages general
 vim.cmd [[ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} ]]
@@ -54,7 +56,8 @@ Plug 'nvim-lualine/lualine.nvim'			-- Global bar
 Plug 'lewis6991/gitsigns.nvim'				-- Git signs
 Plug 'tpope/vim-surround'					-- Surround
 Plug 'lilydjwg/colorizer'
-Plug 'chaoren/vim-wordmotion'
+Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+-- Plug 'chaoren/vim-wordmotion'
 
 -- Initialize plugin system
 vim.call('plug#end')

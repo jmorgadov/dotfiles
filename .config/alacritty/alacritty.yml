@@ -25,36 +25,65 @@ cursor:
     blinking: Always
   blink_interval: 400
 
-
-# Colors
+# Colors (Base16 Default Dark)
 colors:
-
-  # Tomorrow (https://github.com/aarowill/base16-alacritty/blob/master/colors/base16-tomorrow.yml)
   # Default colors
   primary:
-    background: '#1d1f21'
-    foreground: '#c4c8c5'
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x222222'
-    cursor: '#CCCCCC'
+    background: '0x1a1b26'
+    foreground: '0xc0caf5'
+
   # Normal colors
   normal:
-    black:   '#000000'
-    red:     '#cc6666' 
-    green:   '#b5bd68' 
-    yellow:  '#f0c574' 
-    blue:    '#80a1bd' 
-    magenta: '#b294ba' 
-    cyan:    '#8abdb6' 
-    white:   '#fffefe' 
+    black:   '0x15161e'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
+
   # Bright colors
   bright:
-    black:   '#151515'
-    red:     '#ec8686'
-    green:   '#d5dd88'
-    yellow:  '#ffd594'
-    blue:    '#a0c1dd'
-    magenta: '#d2b4da'
-    cyan:    '#aaddd6'
-    white:   '#ffffff'
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
+  # primary:
+  #   background: '#1a1b26'
+  #   foreground: '#d8d8d8'
+
+  # # Colors the cursor will use if `custom_cursor_colors` is true
+  # cursor:
+  #   text: '#d8d8d8'
+  #   cursor: '#d8d8d8'
+
+  # # Normal colors
+  # normal:
+  #   black:   '#1c1f21'
+  #   red:     '#cd4642'
+  #   green:   '#a1b56c'
+  #   yellow:  '#f7ca88'
+  #   blue:    '#7cafc2'
+  #   magenta: '#ba8baf'
+  #   cyan:    '#86c1b9'
+  #   white:   '#d8d8d8'
+
+  # # Bright colors
+  # bright:
+  #   black:   '#585858'
+  #   red:     '#cd4642'
+  #   green:   '#a1b56c'
+  #   yellow:  '#f7ca88'
+  #   blue:    '#7cafc2'
+  #   magenta: '#ba8baf'
+  #   cyan:    '#86c1b9'
+  #   white:   '#f8f8f8'

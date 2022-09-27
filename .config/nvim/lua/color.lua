@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd(
 )
 
 vim.cmd [[
-  colorscheme base16-gruvbox-dark-hard
+  colorscheme tokyonight
   hi DiagnosticError guifg=#CC6666
   hi DiagnosticWarn  guifg=#F0C674
   hi DiagnosticInfo  guifg=#81A2BE

@@ -51,9 +51,6 @@ local on_attach = function(client, bufnr)
 end
 
 
---Flutter
--- require("flutter-tools").setup { on_attach = on_attach }
-
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.on_server_ready(function(server)
@@ -79,11 +76,49 @@ lsp_installer.on_server_ready(function(server)
 			capabilities = capabilities
 		}
 	end
+	if server.name == "clangd" then
+		local cmp_capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+		local clangd_capabilities = cmp_capabilities
+		capabilities.textDocument.semanticHighlighting = true
+		-- capabilities.offsetEncoding = { "utf-8" }
+
+		opts.settings = {
+			capabilities = capabilities,
+			cmd = {
+				"clangd",
+				"--background-index",
+				"--pch-storage=memory",
+				"--clang-tidy",
+				"--suggest-missing-includes",
+				"--cross-file-rename",
+				"--completion-style=detailed",
+			},
+			init_options = {
+				clangdFileStatus = true,
+				usePlaceholders = true,
+				completeUnimported = true,
+				semanticHighlighting = true,
+			}
+		}
+	end
 	-- if server.name == "dartls" then
 	-- 	return
 	-- end
 	server:setup(opts)
 end)
+
+
+--Flutter
+require("flutter-tools").setup { on_attach = on_attach }
+
+local notify = vim.notify
+vim.notify = function(msg, ...)
+    if msg:match("warning: multiple different client offset_encodings") then
+        return
+    end
+
+    notify(msg, ...)
+end
 
 -- Show line diagnostics automatically in hover window
 vim.o.updatetime = 250

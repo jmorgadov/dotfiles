@@ -22,10 +22,10 @@ nmap("#", ":set hlsearch<CR>#")
 nmap("*", ":set hlsearch<CR>*")
 
 imap("<C-Space>", "<C-X><C-O>")
-nmap("J", "7j")
-nmap("K", "7k")
+-- nmap("J", "7j")
+-- nmap("K", "7k")
 
-nmap("//", ":vs<CR>")
+nmap("==", ":vs<CR>")
 nmap("--", ":sp<CR>")
 
 nmap("<leader>rl", ":so ~/.config/nvim/init.lua<CR>")
@@ -41,7 +41,7 @@ nmap("<leader>ds", ":Pydocstring<CR>")
 nmap("<leader>tr", ":Telescope resume<CR>")
 nmap("<leader>gl", "::Flogsplit<CR>")
 
-nmap("<leader>ff", ":FZF<CR>")
+nmap("<leader>ff", ":Telescope fd<CR>")
 nmap("<leader>fg", ":Telescope live_grep<CR>")
 nmap("<leader>fb", ":Telescope buffers<CR>")
 nmap("<leader>fh", ":Telescope help_tags<CR>")

@@ -40,3 +40,5 @@ vim.cmd [[
 ]]
 
 vim.cmd [[ autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2 ]]
+
+vim.cmd [[ autocmd FileType tex set textwidth=72 ]]
