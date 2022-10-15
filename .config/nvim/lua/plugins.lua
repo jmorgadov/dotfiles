@@ -20,6 +20,7 @@ Plug 'sainnhe/everforest'
 Plug 'RRethy/nvim-base16'
 Plug 'joshdick/onedark.vim'
 Plug 'daschw/leaf.nvim'
+Plug 'ellisonleao/gruvbox.nvim'
 vim.cmd [[ Plug 'folke/tokyonight.nvim', { 'branch': 'main' } ]]
 
 -- Languages
@@ -57,9 +58,8 @@ Plug 'lewis6991/gitsigns.nvim'				-- Git signs
 Plug 'tpope/vim-surround'					-- Surround
 Plug 'lilydjwg/colorizer'
 Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
--- Plug 'chaoren/vim-wordmotion'
+Plug 'voldikss/vim-floaterm'
 
 -- Initialize plugin system
 vim.call('plug#end')
-
 vim.cmd [[ set statusline+=%{FugitiveHead()} ]]

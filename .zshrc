@@ -156,6 +156,7 @@ alias vs="nvim -S .session.vim"
 alias gdf="git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias vdf="GIT_DIR=$HOME/dotfiles GIT_WORK_TREE=$HOME nvim"
 alias ranger=". ranger"
+alias lg="lazygit"
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"

@@ -25,6 +25,7 @@ vim.g.mapleader = " "
 vim.g.html_indent_script1 = "zero"
 vim.opt.spelllang="en"
 vim.opt.cursorline = true
+vim.g.floaterm_opener = "edit"
 
 
 -- Set tab spacing to 2 spaces if filetype is dart

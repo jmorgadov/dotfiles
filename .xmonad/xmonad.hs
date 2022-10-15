@@ -285,8 +285,8 @@ addUnderline color str = "%{u" ++ color ++ "}%{+u}" ++ str ++ "%{-u}"
 addBgColor color str = "%{B" ++ color ++ "}" ++ str ++ "%{B-}"
 setFgColor color str = "%{F" ++ color ++ "}" ++ str ++ "%{F-}"
 
-bgColor = "#dd444b6a"
-underlineColor = "#bb9af7"
+bgColor = "#dd504945"
+underlineColor = "#98971a"
 
 fmtWs ws isCurrent inUse
 	| isCurrent && inUse = addBgColor bgColor $ addUnderline underlineColor $ fmtWsName ws

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-iconcolor=#bb9af7
+iconcolor=#98971a
 #
 output=$(cmus-remote -C status)
 artist=$(echo "$output" | grep "^tag artist" | cut -c 12-)
