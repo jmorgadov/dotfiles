@@ -59,6 +59,7 @@ Plug 'tpope/vim-surround'					-- Surround
 Plug 'lilydjwg/colorizer'
 Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 Plug 'voldikss/vim-floaterm'
+Plug 'ggandor/leap.nvim'
 
 -- Initialize plugin system
 vim.call('plug#end')

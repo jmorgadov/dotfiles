@@ -34,7 +34,6 @@ local float_term_cmd = ":FloatermNew --height=0.9 --width=0.9 --wintype=float --
 nmap("<leader>gg", float_term_cmd .. "lazygit<CR>")
 nmap("<leader>p", float_term_cmd .. "ranger<CR>")
 nmap("<leader>y", float_term_cmd .. "ipython<CR>")
-nmap("<leader>ss", ":mks! .session.vim<CR>")
 nmap("<leader>ds", ":Pydocstring<CR>")
 nmap("<leader>tr", ":Telescope resume<CR>")
 nmap("<leader>gl", ":Flogsplit<CR>")
