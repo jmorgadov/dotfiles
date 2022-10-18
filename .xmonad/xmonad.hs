@@ -36,6 +36,13 @@ import XMonad.Util.NamedWindows (getName)
 --
 myTerminal      = "alacritty"
 
+-- Colors
+--
+myNormalBorderColor  = "#616161"
+myFocusedBorderColor = "#648fb3"
+polybarWsBgColor = "#dd504945"
+polybarWsUnderlineColor = "#98971a"
+
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
@@ -65,11 +72,6 @@ myModMask       = mod1Mask
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
 myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
-
--- Border colors for unfocused and focused windows, respectively.
---
-myNormalBorderColor  = "#616161"
-myFocusedBorderColor = "#648fb3"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -285,13 +287,10 @@ addUnderline color str = "%{u" ++ color ++ "}%{+u}" ++ str ++ "%{-u}"
 addBgColor color str = "%{B" ++ color ++ "}" ++ str ++ "%{B-}"
 setFgColor color str = "%{F" ++ color ++ "}" ++ str ++ "%{F-}"
 
-bgColor = "#dd504945"
-underlineColor = "#98971a"
-
 fmtWs ws isCurrent inUse
-	| isCurrent && inUse = addBgColor bgColor $ addUnderline underlineColor $ fmtWsName ws
-	| isCurrent = addBgColor bgColor $ fmtWsName ws
-	| inUse     = addUnderline underlineColor $ fmtWsName ws
+	| isCurrent && inUse = addBgColor polybarWsBgColor $ addUnderline polybarWsUnderlineColor $ fmtWsName ws
+	| isCurrent = addBgColor polybarWsBgColor $ fmtWsName ws
+	| inUse     = addUnderline polybarWsUnderlineColor $ fmtWsName ws
 	| otherwise = fmtWsName ws
 
 myLogHook = do
