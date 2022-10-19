@@ -8,3 +8,8 @@ fi
 
 # Set keyboard layout
 setxkbmap us -variant intl
+
+# Run conky
+killall -q conky
+conky -c $HOME/.config/conky/conky.conf &
+conky -c $HOME/.config/conky/clock_conky.conf &
