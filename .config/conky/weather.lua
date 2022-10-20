@@ -12,7 +12,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'Iosevka Term:size=14',
+    font = 'Iosevka Nerd Font:size=14',
     gap_x = 30,
     gap_y = 8,
     minimum_height = 5,
@@ -40,13 +40,15 @@ conky.config = {
 }
 
 conky.text = [[
-${execi 600 $HOME/.config/conky/weather}
-${font Iosevka Nerd Font:bold:size=50}${execi 100 cat ~/.cache/weather.json | jq -r '.name'}${font}
-${voffset 8}
+${execi 300 $HOME/.config/conky/weather}
+${font Iosevka Nerd Font:bold:size=50}${execi 100 cat ~/.cache/weather.json | jq -r '.name'}${font :size=22}
+${font Iosevka Nerd Font:size=16}  ${execi 60 cat $HOME/.cache/weather.json | jq '.sys.sunrise' | xargs -I {} date --date @{} +%I:%M:%S%P}  \
+  ${execi 60 cat $HOME/.cache/weather.json | jq '.sys.sunset' | xargs -I {} date --date @{} +%I:%M:%S%P}${font :size=8}
+
 ${voffset -20}${font Iosevka Nerd Font:size=100}${execi 15 $HOME/.config/conky/weather-text-icon}${font}\
-${offset 120}${voffset -85}${font Iosevka Nerd Font:bold:size=64}${execi 100 cat $HOME/.cache/weather.json | jq '.main.temp' | awk '{printf int($1)}'}°C\
-${font Iosevka Nerd Font:italic:size=24} feels ${execi 100 cat $HOME/.cache/weather.json | jq '.main.feels_like' | awk '{print int($1)}'}°C${font}
-${offset 190}${font Iosevka Nerd Font:size=24}${execi 100 cat ~/.cache/weather.json | jq -r '.weather[0].description' | sed "s|\<.|\U&|g"}${font}\
-${offset 30}${voffset -2}${font Iosevka Nerd Font:size=15} ${execi 100 (cat ~/.cache/weather.json | jq '.main.humidity')}%  \
-${font Iosevka Nerd Font:size=15}  ${execi 100 (cat ~/.cache/weather.json | jq '.wind.speed')}m/s
+${offset 120}${voffset -85}${font Iosevka Nerd Font:bold:size=64}${execi 60 cat $HOME/.cache/weather.json | jq '.main.temp' | awk '{printf "%.0f",$1}'}°C\
+${font Iosevka Nerd Font:italic:size=24} feels ${execi 60 cat $HOME/.cache/weather.json | jq '.main.feels_like' | awk '{printf "%.0f",$1}'}°C${font}
+${offset 190}${font Iosevka Nerd Font:size=24}${execi 60 cat ~/.cache/weather.json | jq -r '.weather[0].description' | sed "s|\<.|\U&|g"}${font}\
+${offset 30}${voffset -2}${font Iosevka Nerd Font:size=15} ${execi 60 (cat ~/.cache/weather.json | jq '.main.humidity')}%  \
+${font Iosevka Nerd Font:size=15}  ${execi 60 (cat ~/.cache/weather.json | jq '.wind.speed')}m/s
 ]]
