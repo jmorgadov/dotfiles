@@ -10,6 +10,8 @@ fi
 setxkbmap us -variant intl
 
 # Run conky
+CONKY_CONFIGS_PATH=$HOME/.config/conky/
 killall -q conky
-conky -c $HOME/.config/conky/conky.conf &
-conky -c $HOME/.config/conky/clock_conky.conf &
+for CONKY_CONFIG in $CONKY_CONFIGS_PATH/*; do
+	conky -c $CONKY_CONFIG &
+done

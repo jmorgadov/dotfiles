@@ -1,5 +1,5 @@
 conky.config = {
-    alignment = 'bottom_right',
+    alignment = 'bottom_left',
     background = false,
     border_width = 1,
     cpu_avg_samples = 2,
@@ -14,7 +14,7 @@ conky.config = {
     extra_newline = false,
     font = 'Iosevka Term:size=14',
     gap_x = 30,
-    gap_y = 10,
+    gap_y = 8,
     minimum_height = 5,
     minimum_width = 5,
     net_avg_samples = 2,
@@ -40,10 +40,13 @@ conky.config = {
 }
 
 conky.text = [[
-${execp "cal | sed s/^/\${alignr}/"}
-
-$alignr ${font Iosevka Nerd Font:size=20} Italy ${execi 1 TZ=Europe/Rome date "+%I:%M:%S %p"} 
-$color${font Iosevka Term:size=80} ${time %I:%M:%S %p}${font Iosevka Term:size=20}
-$hr
-$color $alignr ${font Iosevka Nerd Font:size=30}  ${time %A %d, %b %Y} 
+${execi 600 $HOME/.config/conky/weather}
+${font Iosevka Nerd Font:bold:size=50}${execi 100 cat ~/.cache/weather.json | jq -r '.name'}${font}
+${voffset 8}
+${voffset -20}${font Iosevka Nerd Font:size=100}${execi 15 $HOME/.config/conky/weather-text-icon}${font}\
+${offset 120}${voffset -85}${font Iosevka Nerd Font:bold:size=64}${execi 100 cat $HOME/.cache/weather.json | jq '.main.temp' | awk '{printf int($1)}'}°C\
+${font Iosevka Nerd Font:italic:size=24} feels ${execi 100 cat $HOME/.cache/weather.json | jq '.main.feels_like' | awk '{print int($1)}'}°C${font}
+${offset 190}${font Iosevka Nerd Font:size=24}${execi 100 cat ~/.cache/weather.json | jq -r '.weather[0].description' | sed "s|\<.|\U&|g"}${font}\
+${offset 30}${voffset -2}${font Iosevka Nerd Font:size=15} ${execi 100 (cat ~/.cache/weather.json | jq '.main.humidity')}%  \
+${font Iosevka Nerd Font:size=15}  ${execi 100 (cat ~/.cache/weather.json | jq '.wind.speed')}m/s
 ]]
