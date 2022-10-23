@@ -64,5 +64,4 @@ elif [[ "${WEATHER_ICON}" = *50d* ]]; then
     echo "${ICON_50D}"
 elif [[ "${WEATHER_ICON}" = *50n* ]]; then
     echo "${ICON_50N}"
-	fi
 fi

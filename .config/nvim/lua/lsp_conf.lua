@@ -4,7 +4,6 @@ local key_opts = { noremap = true, silent = true }
 -- vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', key_opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', key_opts)
--- vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -50,63 +49,34 @@ local on_attach = function(client, bufnr)
 	end
 end
 
+require("mason").setup()
+require("mason-lspconfig").setup()
 
-local lsp_installer = require("nvim-lsp-installer")
+require('lspconfig')['pyright'].setup{
+    on_attach = on_attach,
+}
 
-lsp_installer.on_server_ready(function(server)
-	local opts = { on_attach = on_attach }
-	if server.name == "sumneko_lua" then
-		opts.settings = {
-			Lua = {
-				diagnostics = {
-					globals = { 'vim', 'use' }
-				}
-			}
+require('lspconfig')['clangd'].setup{
+    on_attach = on_attach,
+	settings = {
+		capabilities = capabilities,
+		cmd = {
+			"clangd",
+			"--background-index",
+			"--pch-storage=memory",
+			"--clang-tidy",
+			"--suggest-missing-includes",
+			"--cross-file-rename",
+			"--completion-style=detailed",
+		},
+		init_options = {
+			clangdFileStatus = true,
+			usePlaceholders = true,
+			completeUnimported = true,
+			semanticHighlighting = true,
 		}
-	end
-	if server.name == "html" then
-		capabilities.textDocument.completion.completionItem.snippetSupport = true
-		opts.settings = {
-			configurationSection = { "html", "css", "javascript" },
-			embeddedLanguages = {
-				css = true,
-				javascript = true
-			},
-			provideFormatter = true,
-			capabilities = capabilities
-		}
-	end
-	if server.name == "clangd" then
-		local cmp_capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-		local clangd_capabilities = cmp_capabilities
-		capabilities.textDocument.semanticHighlighting = true
-		-- capabilities.offsetEncoding = { "utf-8" }
-
-		opts.settings = {
-			capabilities = capabilities,
-			cmd = {
-				"clangd",
-				"--background-index",
-				"--pch-storage=memory",
-				"--clang-tidy",
-				"--suggest-missing-includes",
-				"--cross-file-rename",
-				"--completion-style=detailed",
-			},
-			init_options = {
-				clangdFileStatus = true,
-				usePlaceholders = true,
-				completeUnimported = true,
-				semanticHighlighting = true,
-			}
-		}
-	end
-	if server.name == "dartls" then
-		return
-	end
-	server:setup(opts)
-end)
-
+	}
+}
 
 --Flutter
 require("flutter-tools").setup { lsp = { on_attach = on_attach } }
