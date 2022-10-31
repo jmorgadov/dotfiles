@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+NEW_WALLPAPER=$1
+
+if [ -z "$NEW_WALLPAPER" ]; then
+	echo "Usage: setwp <new wallpaper>"
+	exit 1
+fi
+
+ACTION=$2
+if [ -z "$ACTION" ]; then
+	ACTION="mv"
+fi
+
+TIME=$(date +%s)
+DEFAULT_WALLPAPER="$HOME/pictures/wallpaper.jpg"
+
+if [ -f "$DEFAULT_WALLPAPER" ]; then
+	mv "$DEFAULT_WALLPAPER" "$HOME/pictures/wallpaper_$TIME.jpg"
+fi
+
+
+if [ "$ACTION" == "mv" ]; then
+	mv "$NEW_WALLPAPER" "$DEFAULT_WALLPAPER"
+else
+	cp "$NEW_WALLPAPER" "$DEFAULT_WALLPAPER"
+fi
+
+cp "$DEFAULT_WALLPAPER" "/usr/share/pixmaps/wallpaper.jpg"
