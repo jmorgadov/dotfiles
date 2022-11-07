@@ -71,7 +71,7 @@ myModMask       = mod1Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
+myWorkspaces    = ["\xf121 ","\xf268 ","\xe217 ","4","5","6","7","8","\xf001"]
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
