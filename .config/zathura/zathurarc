@@ -1,48 +1,46 @@
 set selection-clipboard clipboard
-set font                        "Iosevka Term 12"
+set font                      "Iosevka Term 12"
 
-set notification-error-bg       "#1d2021" # bg
-set notification-error-fg       "#fb4934" # bright:red
-set notification-warning-bg     "#1d2021" # bg
-set notification-warning-fg     "#fabd2f" # bright:yellow
-set notification-bg             "#1d2021" # bg
-set notification-fg             "#b8bb26" # bright:green
+set default-fg                "#CAD3F5"
+set default-bg 			      "#1E1E2E"
 
-set completion-bg               "#504945" # bg2
-set completion-fg               "#ebdbb2" # fg
-set completion-group-bg         "#3c3836" # bg1
-set completion-group-fg         "#928374" # gray
-set completion-highlight-bg     "#83a598" # bright:blue
-set completion-highlight-fg     "#504945" # bg2
+set completion-bg		      "#363A4F"
+set completion-fg		      "#CAD3F5"
+set completion-highlight-bg	  "#575268"
+set completion-highlight-fg	  "#CAD3F5"
+set completion-group-bg		  "#363A4F"
+set completion-group-fg		  "#8AADF4"
 
-# Define the color in index mode
-set index-bg                    "#504945" # bg2
-set index-fg                    "#ebdbb2" # fg
-set index-active-bg             "#83a598" # bright:blue
-set index-active-fg             "#504945" # bg2
+set statusbar-fg		      "#CAD3F5"
+set statusbar-bg		      "#363A4F"
 
-set inputbar-bg                 "#1d2021" # bg
-set inputbar-fg                 "#ebdbb2" # fg
+set notification-bg		      "#363A4F"
+set notification-fg		      "#CAD3F5"
+set notification-error-bg	  "#363A4F"
+set notification-error-fg	  "#ED8796"
+set notification-warning-bg	  "#363A4F"
+set notification-warning-fg	  "#FAE3B0"
 
-set statusbar-bg                "#504945" # bg2
-set statusbar-fg                "#ebdbb2" # fg
+set inputbar-fg			      "#CAD3F5"
+set inputbar-bg 		      "#363A4F"
 
-set highlight-color             "#fabd2f" # bright:yellow
-set highlight-active-color      "#fe8019" # bright:orange
+set recolor-lightcolor		  "#24273A"
+set recolor-darkcolor		  "#CAD3F5"
 
-set default-bg                  "#1d2021" # bg
-set default-fg                  "#ebdbb2" # fg
-set render-loading              true
-set render-loading-bg           "#1d2021" # bg
-set render-loading-fg           "#ebdbb2" # fg
+set index-fg			      "#CAD3F5"
+set index-bg			      "#24273A"
+set index-active-fg		      "#CAD3F5"
+set index-active-bg		      "#363A4F"
 
-# Recolor book content's color
-set recolor-lightcolor          "#202324" # bg
-set recolor-darkcolor           "#ebdbb2" # fg
-set recolor                     "true"
+set render-loading-bg		  "#24273A"
+set render-loading-fg		  "#CAD3F5"
 
-set page-padding				5
+set highlight-color		      "#575268"
+set highlight-fg              "#F5BDE6"
+set highlight-active-color	  "#F5BDE6"
+set page-padding			  5
+set recolor                   "true"
 
 # setting recolor-keep true will keep any color your pdf has.
 # if it is false, it'll just be black and white
-set recolor-keephue             "true"
+set recolor-keephue           "true"

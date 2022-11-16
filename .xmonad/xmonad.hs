@@ -29,7 +29,7 @@ import Data.List (sortBy)
 import Data.Ord (comparing)
 import Data.Function (on)
 import Control.Monad (forM_, join)
-import XMonad.Util.NamedWindows (getName)
+import XMonad.Util.NamedWindows (getName, getNameWMClass)
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -71,7 +71,7 @@ myModMask       = mod1Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["\xf121 ","\xf268 ","\xe217 ","4","5","6","7","8","\xf001 "]
+myWorkspaces    = ["\xf121 ","\xf268 ","\xe217 ","\xf444\x4","\xf444\x5","\xf444\x6","\xf444\x7","\xf444\x8","\xf001 "]
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.

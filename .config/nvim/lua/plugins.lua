@@ -22,10 +22,12 @@ Plug 'joshdick/onedark.vim'
 Plug 'daschw/leaf.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
 vim.cmd [[ Plug 'folke/tokyonight.nvim', { 'branch': 'main' } ]]
+vim.cmd [[ Plug 'catppuccin/nvim', { 'as': 'catppuccin' } ]]
 
 -- Languages
 Plug 'lervag/vimtex'
 Plug 'plasticboy/vim-markdown'
+-- Plug 'tpope/vim-markdown'
 Plug 'akinsho/flutter-tools.nvim'
 -- Plug 'thosakwe/vim-flutter'
 
@@ -56,11 +58,11 @@ Plug 'szw/vim-maximizer'					-- Maximize a buffer temporarly (util for vimspecto
 Plug 'nvim-orgmode/orgmode'					-- Org mode
 Plug 'nvim-lualine/lualine.nvim'			-- Global bar
 Plug 'lewis6991/gitsigns.nvim'				-- Git signs
-Plug 'tpope/vim-surround'					-- Surround
 Plug 'lilydjwg/colorizer'
 Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 Plug 'voldikss/vim-floaterm'
 Plug 'ggandor/leap.nvim'
+-- Plug 'tpope/vim-surround'					-- Surround
 
 -- Initialize plugin system
 vim.call('plug#end')

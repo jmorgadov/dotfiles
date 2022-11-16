@@ -30,8 +30,13 @@ require("gruvbox").setup({
   	SignColumn = {bg = "#3c3836"}
   }
 })
+
+require("catppuccin").setup {
+    flavour = "mocha" -- mocha, macchiato, frappe, latte
+}
+
 vim.cmd [[
-  colorscheme gruvbox
+  colorscheme catppuccin
   hi FloatermBorder guibg=##1d2021
   hi NormalFloat guibg=#1d2021
   hi DiagnosticError guifg=#CC6666

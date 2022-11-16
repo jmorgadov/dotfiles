@@ -19,21 +19,22 @@ cmd [[ autocmd FileType tex map <F6> :call vimtex#compiler#stop()<CR> ]]
 
 
 --[ Markdown ]------------------------------------------------------------------
-vim.g.vim_markdown_conceal = 2
+vim.g.vim_markdown_conceal = 1
 vim.g.vim_markdown_conceal_code_blocks = 0
-vim.g.vim_markdown_math = 1
+-- vim.g.vim_markdown_math = 1
 vim.g.vim_markdown_toml_frontmatter = 1
 vim.g.vim_markdown_frontmatter = 1
-vim.g.vim_markdown_strikethrough = 1
+vim.g.vim_markdown_folding_disabled = 1
+-- vim.g.vim_markdown_strikethrough = 1
 vim.g.vim_markdown_autowrite = 1
-vim.g.vim_markdown_follow_anchor = 1
+-- vim.g.vim_markdown_follow_anchor = 1
 cmd [[ autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown ]]
-cmd [[ autocmd FileType markdown set conceallevel=0 ]]
-cmd [[ autocmd FileType markdown :normal zR ]]
+-- cmd [[ autocmd FileType markdown set conceallevel=0 ]]
+cmd [[ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'c'] ]]
 
 
 --[ Tree sitter ]---------------------------------------------------------------
-require('nvim-treesitter.configs').setup { highlight = { enable = true } }
+require('nvim-treesitter.configs').setup { highlight = { enable = true, disable = { "markdown" } } }
 
 --[ Term Wrapper ]--------------------------------------------------------------
 require"termwrapper".setup {
@@ -124,6 +125,7 @@ null_ls.setup({
     fallback_severity = vim.diagnostic.severity.INFO,
     sources = {
         -- Python
+        -- null_ls.builtins.diagnostics.ruff,
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.formatting.black,
