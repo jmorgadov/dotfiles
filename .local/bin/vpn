@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+# This script is used to connect to a VPN server using WireGuard.
+SEL_CONFIG=$(ls /etc/wireguard/ | grep .conf | fzf | sed 's/.conf//g')
+wg-quick up $SEL_CONFIG || wg-quick down $SEL_CONFIG
