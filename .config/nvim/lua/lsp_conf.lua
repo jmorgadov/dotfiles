@@ -27,8 +27,9 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', key_opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', key_opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', key_opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>fi', '<cmd>lua vim.lsp.buf.formatting()<CR>', key_opts)
-	if client.resolved_capabilities.document_highlight then
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>fi', '<cmd>lua vim.lsp.buf.format{ async = true }<CR>', key_opts)
+
+	if client.server_capabilities.document_highlight then
 		vim.api.nvim_create_augroup('lsp_document_highlight', {
 			clear = false
 		})
