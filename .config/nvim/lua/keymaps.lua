@@ -42,7 +42,7 @@ nmap("<leader>ff", ":Telescope fd<CR>")
 nmap("<leader>fg", ":Telescope live_grep<CR>")
 nmap("<leader>fb", ":Telescope buffers<CR>")
 nmap("<leader>fh", ":Telescope help_tags<CR>")
-nmap("<leader>gb", ":Telescope git_branches<CR>")
+nmap("<leader>gb", ":Gitsigns blame_line<CR>")
 
 nmap('<C-T>', ':Ttoggle<CR>')
 tmap('<C-T>', '<C-\\><C-N>:Ttoggle<CR>')

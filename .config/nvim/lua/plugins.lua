@@ -15,12 +15,10 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'ray-x/material_plus.nvim'
 Plug 'w0ng/vim-hybrid'
 Plug 'doums/darcula'
-Plug 'lifepillar/vim-gruvbox8'
 Plug 'sainnhe/everforest'
 Plug 'RRethy/nvim-base16'
 Plug 'joshdick/onedark.vim'
 Plug 'daschw/leaf.nvim'
-Plug 'ellisonleao/gruvbox.nvim'
 vim.cmd [[ Plug 'folke/tokyonight.nvim', { 'branch': 'main' } ]]
 vim.cmd [[ Plug 'catppuccin/nvim', { 'as': 'catppuccin' } ]]
 
@@ -56,13 +54,12 @@ Plug 'tpope/vim-fugitive'					-- Git
 Plug 'rbong/vim-flog'						-- Git log
 Plug 'szw/vim-maximizer'					-- Maximize a buffer temporarly (util for vimspector)
 Plug 'nvim-orgmode/orgmode'					-- Org mode
-Plug 'nvim-lualine/lualine.nvim'			-- Global bar
 Plug 'lewis6991/gitsigns.nvim'				-- Git signs
 Plug 'lilydjwg/colorizer'
 Plug 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 Plug 'voldikss/vim-floaterm'
 Plug 'ggandor/leap.nvim'
--- Plug 'tpope/vim-surround'					-- Surround
+Plug 'feline-nvim/feline.nvim'
 
 -- Initialize plugin system
 vim.call('plug#end')

@@ -1,7 +1,7 @@
 window:
   padding:
     x: 0
-    y: 0
+    y: 5
 
 font:
   normal:
@@ -13,11 +13,11 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: -2
+    y: 0
 
   glyph_offset:
     x: 0
-    y: -1
+    y: 0
 
 cursor:
   style:
@@ -102,33 +102,4 @@ colors:
 
     indexed_colors:
         - { index: 16, color: "#FAB387" }
-        - { index: 17, color: "#F5E0DC" }  # primary:
-  #   background: '#1a1b26'
-  #   foreground: '#d8d8d8'
-
-  # # Colors the cursor will use if `custom_cursor_colors` is true
-  # cursor:
-  #   text: '#d8d8d8'
-  #   cursor: '#d8d8d8'
-
-  # # Normal colors
-  # normal:
-  #   black:   '#1c1f21'
-  #   red:     '#cd4642'
-  #   green:   '#a1b56c'
-  #   yellow:  '#f7ca88'
-  #   blue:    '#7cafc2'
-  #   magenta: '#ba8baf'
-  #   cyan:    '#86c1b9'
-  #   white:   '#d8d8d8'
-
-  # # Bright colors
-  # bright:
-  #   black:   '#585858'
-  #   red:     '#cd4642'
-  #   green:   '#a1b56c'
-  #   yellow:  '#f7ca88'
-  #   blue:    '#7cafc2'
-  #   magenta: '#ba8baf'
-  #   cyan:    '#86c1b9'
-  #   white:   '#f8f8f8'
+        - { index: 17, color: "#F5E0DC" }

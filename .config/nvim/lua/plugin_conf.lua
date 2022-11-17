@@ -6,7 +6,6 @@ vim.g.fzf_layout = { window = { width = 0.8, height = 0.8 } }
 
 --[ Telescope ]-----------------------------------------------------------------
 require('telescope').setup{ defaults = { file_ignore_patterns = {".git"} } }
--- require("telescope").load_extension("flutter")
 
 
 --[ Trouble ]-------------------------------------------------------------------
@@ -15,26 +14,24 @@ require("trouble").setup {}
 
 --[ Vimtex ]--------------------------------------------------------------------
 cmd [[ autocmd FileType tex map <F5> :call vimtex#compiler#start()<CR> ]]
-cmd [[ autocmd FileType tex map <F6> :call vimtex#compiler#stop()<CR> ]]
+cmd [[ autocmd FileType tex map <F4> :call vimtex#compiler#stop()<CR> ]]
 
 
 --[ Markdown ]------------------------------------------------------------------
 vim.g.vim_markdown_conceal = 1
 vim.g.vim_markdown_conceal_code_blocks = 0
--- vim.g.vim_markdown_math = 1
 vim.g.vim_markdown_toml_frontmatter = 1
 vim.g.vim_markdown_frontmatter = 1
 vim.g.vim_markdown_folding_disabled = 1
--- vim.g.vim_markdown_strikethrough = 1
 vim.g.vim_markdown_autowrite = 1
--- vim.g.vim_markdown_follow_anchor = 1
 cmd [[ autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown ]]
--- cmd [[ autocmd FileType markdown set conceallevel=0 ]]
 cmd [[ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'c'] ]]
+cmd [[ autocmd FileType markdown map <F5> :MarkdownPreview<CR> ]]
 
 
 --[ Tree sitter ]---------------------------------------------------------------
 require('nvim-treesitter.configs').setup { highlight = { enable = true, disable = { "markdown" } } }
+
 
 --[ Term Wrapper ]--------------------------------------------------------------
 require"termwrapper".setup {
@@ -85,37 +82,11 @@ require("leaf").setup({
 })
 
 
---[ Lualine ]-------------------------------------------------------------------
-require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    path = 1,
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  extensions = { 'fzf', 'fugitive' }
-}
+-----[ Feline ]-------------------------------------------------------------------
+local ctp_feline = require('catppuccin.groups.integrations.feline')
+require("feline").setup({
+    components = ctp_feline.get(),
+})
 
 
 --[ Null-ls ]-------------------------------------------------------------------
@@ -126,7 +97,7 @@ null_ls.setup({
     sources = {
         -- Python
         -- null_ls.builtins.diagnostics.ruff,
-        null_ls.builtins.diagnostics.pylint,
+		null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.formatting.black,
 		null_ls.builtins.formatting.isort.with({
