@@ -27,7 +27,7 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', key_opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', key_opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', key_opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>fi', '<cmd>lua vim.lsp.buf.format{ async = true }<CR>', key_opts)
+	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>fi', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', key_opts)
 
 	if client.server_capabilities.document_highlight then
 		vim.api.nvim_create_augroup('lsp_document_highlight', {
@@ -50,21 +50,15 @@ local on_attach = function(client, bufnr)
 	end
 end
 
+
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-}
-require('lspconfig')['texlab'].setup{
-    on_attach = on_attach,
-}
-
-require('lspconfig')['dartls'].setup{
-    on_attach = on_attach,
-}
-
-require('lspconfig')['clangd'].setup{
+nvim_lsp = require("lspconfig")
+nvim_lsp.pyright.setup{ on_attach = on_attach }
+nvim_lsp.texlab.setup{ on_attach = on_attach }
+nvim_lsp.dartls.setup{ on_attach = on_attach }
+nvim_lsp.clangd.setup{
     on_attach = on_attach,
 	settings = {
 		capabilities = capabilities,

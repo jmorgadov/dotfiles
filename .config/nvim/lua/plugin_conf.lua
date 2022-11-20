@@ -15,7 +15,7 @@ require("trouble").setup {}
 --[ Vimtex ]--------------------------------------------------------------------
 cmd [[ autocmd FileType tex map <F5> :call vimtex#compiler#start()<CR> ]]
 cmd [[ autocmd FileType tex map <F4> :call vimtex#compiler#stop()<CR> ]]
-
+cmd [[ let g:vimtex_format_enabled = 0 ]]
 
 --[ Markdown ]------------------------------------------------------------------
 vim.g.vim_markdown_conceal = 1
@@ -82,7 +82,7 @@ require("leaf").setup({
 })
 
 
------[ Feline ]-------------------------------------------------------------------
+--[ Feline ]--------------------------------------------------------------------
 local ctp_feline = require('catppuccin.groups.integrations.feline')
 require("feline").setup({
     components = ctp_feline.get(),

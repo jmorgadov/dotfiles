@@ -12,26 +12,9 @@ export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 export NODE_PATH=$NODE_PATH:$HOME/.nvm/versions/node/v17.9.1/lib/node_modules
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
+export PATH="$HOME/.local/lib/python3.10/site-packages/:$PATH"
+
 export JAVA_HOME=$HOME/softs/jdk-18.0.2.1
-
-# Colors
-export BASE00="#1c1f21"
-export BASE01="#393d40"
-export BASE02="#555a5f"
-export BASE03="#72777c"
-export BASE04="#a9aeb2"
-export BASE05="#c3c7ca"
-export BASE06="#dbdee0"
-export BASE07="#f0f1f2"
-export BASE08="#82bce8"
-export BASE09="#8289e8"
-export BASE0A="#ae82e8"
-export BASE0B="#e882bc"
-export BASE0C="#e8ae82"
-export BASE0D="#bce882"
-export BASE0E="#82e8ae"
-export BASE0F="#82e8e1"
-
 
 # For using autojump
 source /etc/profile
@@ -157,10 +140,6 @@ alias gdf="git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias vdf="GIT_DIR=$HOME/dotfiles GIT_WORK_TREE=$HOME nvim"
 alias ranger=". ranger"
 alias lg="lazygit"
-
-# export PYENV_ROOT="$HOME/.pyenv"
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

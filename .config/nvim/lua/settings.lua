@@ -26,12 +26,7 @@ vim.g.html_indent_script1 = "zero"
 vim.opt.spelllang="en"
 vim.opt.cursorline = true
 vim.g.floaterm_opener = "edit"
-
-
--- Set tab spacing to 2 spaces if filetype is dart
-vim.cmd [[augroup filetype_dart]]
-vim.cmd [[autocmd BufRead,BufNewFile *.dart set tabstop=2 shiftwidth=2 softtabstop=2]]
-vim.cmd [[augroup END]]
+vim.opt.formatexpr = "tcqj"
 
 vim.cmd [[
   filetype off
@@ -39,7 +34,3 @@ vim.cmd [[
   autocmd BufWinEnter,WinEnter term://* startinsert
   set laststatus=3
 ]]
-
-vim.cmd [[ autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2 ]]
-
-vim.cmd [[ autocmd FileType tex set textwidth=72 ]]
