@@ -6,3 +6,4 @@ require("keymaps")
 require("lsp_conf")
 require("cmp_conf")
 require("autocmds")
+vim.opt.laststatus=3

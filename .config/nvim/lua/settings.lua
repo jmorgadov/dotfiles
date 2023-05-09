@@ -33,4 +33,5 @@ vim.cmd [[
   filetype plugin indent on
   autocmd BufWinEnter,WinEnter term://* startinsert
   set laststatus=3
+  let g:python3_host_prog = '/home/morgado/.pyenv/shims/python'
 ]]

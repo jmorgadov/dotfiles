@@ -1,13 +1,13 @@
 window:
   padding:
     x: 0
-    y: 5
+    y: 4
 
 font:
   normal:
-    family: Iosevka Nerd Font
+    family: Hack Nerd Font
 
-  size: 9.5
+  size: 8
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -29,13 +29,18 @@ env:
   TERM: 'xterm-256color'
 
 colors:
-    primary:
-        background: "#1E1E2E" # base
-        foreground: "#CDD6F4" # text
-        # Bright and dim foreground colors
-        dim_foreground: "#CDD6F4" # text
-        bright_foreground: "#CDD6F4" # text
+  # Default colors
+  primary:
+    background: '0x1d1f21'
+    foreground: '0xc5c8c6'
 
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1d1f21'
+    cursor: '0xc5c8c6'
+
+
+colors:
     # Cursor colors
     cursor:
         text: "#1E1E2E" # base
@@ -43,6 +48,28 @@ colors:
     vi_mode_cursor:
         text: "#1E1E2E" # base
         cursor: "#B4BEFE" # lavender
+    primary:
+        background: '#1A1B1F'
+        foreground: '#DFE0EA'
+
+    # normal:
+    #     black:   '#272932'
+    #     red:     '#E85A84'
+    #     green:   '#94DD8E'
+    #     yellow:  '#E9D26C'
+    #     blue:    '#7EB7E6'
+    #     magenta: '#D895C7'
+    #     cyan:    '#89BEB7'
+    #     white:   '#CFD0D7'
+    # bright:
+    #     black:   '#16181D'
+    #     red:     '#E85A84'
+    #     green:   '#94DD8E'
+    #     yellow:  '#E9D26C'
+    #     blue:    '#7EB7E6'
+    #     magenta: '#D895C7'
+    #     cyan:    '#89BEB7'
+    #     white:   '#DFE0EA'
 
     # Search colors
     search:
@@ -71,38 +98,68 @@ colors:
         background: "#F5E0DC" # rosewater
 
     # Normal colors
+    # normal:
+    #     black: "#45475A" # surface1
+    #     red: "#F38BA8" # red
+    #     green: "#A6E3A1" # green
+    #     yellow: "#F9E2AF" # yellow
+    #     blue: "#89B4FA" # blue
+    #     magenta: "#F5C2E7" # pink
+    #     cyan: "#94E2D5" # teal
+    #     white: "#BAC2DE" # subtext1
+
+    # # Bright colors
+    # bright:
+    #     black: "#585B70" # surface2
+    #     red: "#F38BA8" # red
+    #     green: "#A6E3A1" # green
+    #     yellow: "#F9E2AF" # yellow
+    #     blue: "#89B4FA" # blue
+    #     magenta: "#F5C2E7" # pink
+    #     cyan: "#94E2D5" # teal
+    #     white: "#A6ADC8" # subtext0
+
+    # # Dim colors
+    # dim:
+    #     black: "#45475A" # surface1
+    #     red: "#F38BA8" # red
+    #     green: "#A6E3A1" # green
+    #     yellow: "#F9E2AF" # yellow
+    #     blue: "#89B4FA" # blue
+    #     magenta: "#F5C2E7" # pink
+    #     cyan: "#94E2D5" # teal
+    #     white: "#BAC2DE" # subtext1
+
+    # indexed_colors:
+    #     - { index: 16, color: "#FAB387" }
+    #     - { index: 17, color: "#F5E0DC" }
+
+  # Normal colors
     normal:
-        black: "#45475A" # surface1
-        red: "#F38BA8" # red
-        green: "#A6E3A1" # green
-        yellow: "#F9E2AF" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
-        cyan: "#94E2D5" # teal
-        white: "#BAC2DE" # subtext1
+      black:   '0x1d1f21'
+      red:     '0xcc6666'
+      green:   '0xb5bd68'
+      yellow:  '0xf0c674'
+      blue:    '0x81a2be'
+      magenta: '0xb294bb'
+      cyan:    '0x8abeb7'
+      white:   '0xc5c8c6'
 
     # Bright colors
     bright:
-        black: "#585B70" # surface2
-        red: "#F38BA8" # red
-        green: "#A6E3A1" # green
-        yellow: "#F9E2AF" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
-        cyan: "#94E2D5" # teal
-        white: "#A6ADC8" # subtext0
-
-    # Dim colors
-    dim:
-        black: "#45475A" # surface1
-        red: "#F38BA8" # red
-        green: "#A6E3A1" # green
-        yellow: "#F9E2AF" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
-        cyan: "#94E2D5" # teal
-        white: "#BAC2DE" # subtext1
+      black:   '0x969896'
+      red:     '0xcc6666'
+      green:   '0xb5bd68'
+      yellow:  '0xf0c674'
+      blue:    '0x81a2be'
+      magenta: '0xb294bb'
+      cyan:    '0x8abeb7'
+      white:   '0xffffff'
 
     indexed_colors:
-        - { index: 16, color: "#FAB387" }
-        - { index: 17, color: "#F5E0DC" }
+      - { index: 16, color: '0xde935f' }
+      - { index: 17, color: '0xa3685a' }
+      - { index: 18, color: '0x282a2e' }
+      - { index: 19, color: '0x373b41' }
+      - { index: 20, color: '0xb4b7b4' }
+      - { index: 21, color: '0xe0e0e0' }

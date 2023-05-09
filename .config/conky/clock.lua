@@ -41,8 +41,7 @@ conky.config = {
 
 conky.text = [[
 ${execp "cal | sed s/^/\${alignr}/"}
-
-$alignr ${font Iosevka Nerd Font:size=20} Italy ${execi 1 TZ=Europe/Rome date "+%I:%M:%S %p"} 
+$alignr ${font Iosevka Nerd Font:size=20} Spain/Italy ${execi 1 TZ=Europe/Rome date "+%I:%M:%S %p"} 
 $color${font Iosevka Term:bold:size=80} ${time %I:%M:%S %p}${font Iosevka Term:size=20}
 $hr
 $color $alignr ${font Iosevka Nerd Font:size=30}  ${time %A %d, %b %Y} 

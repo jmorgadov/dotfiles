@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+# Set keyboard layout
+setxkbmap us -variant intl
+
+# Run conky
+CONKY_CONFIGS_PATH=$HOME/.config/conky/
+killall -q conky
+for CONKY_CONFIG in $CONKY_CONFIGS_PATH/*; do
+	conky -c $CONKY_CONFIG &
+done

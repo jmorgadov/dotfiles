@@ -30,8 +30,9 @@ nmap("<C-S>", ":update<CR>")
 nmap("<leader>wq", ":wq<CR>")
 nmap("<leader>q", ":q<CR>")
 
-local float_term_cmd = ":FloatermNew --height=0.9 --width=0.9 --wintype=float --name=floaterm1 "
+local float_term_cmd = ":FloatermNew --height=0.95 --width=0.95 --wintype=float --name=floaterm1 "
 nmap("<leader>gg", float_term_cmd .. "lazygit<CR>")
+nmap("<leader>dd", float_term_cmd .. "lazydocker<CR>")
 nmap("<leader>p", float_term_cmd .. "ranger<CR>")
 nmap("<leader>y", float_term_cmd .. "ipython<CR>")
 nmap("<leader>ds", ":Pydocstring<CR>")
